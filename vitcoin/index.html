@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitcoin - Landing Page</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom gradient text and glow effects */
+        .neon-text {
+            background: linear-gradient(135deg, #9945ff, #14f195);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hover-glow {
+            transition: 0.3s;
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 15px rgba(20, 241, 149, 0.7);
+        }
+
+        /* Background image styling */
+        .bg-hero {
+            background-image: url('bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .bg-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Navbar dropdown for mobile */
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+            }
+
+            .navbar-menu.open {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 py-4 px-6 fixed w-full top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="text-3xl font-bold neon-text" href="#">Vitcoin</a>
+            <button class="md:hidden text-white" id="navbar-toggle">☰</button>
+            <div class="hidden md:flex navbar-menu space-x-8">
+                <a href="#" class="text-white hover:text-gray-400">Home</a>
+                <a href="#" class="text-white hover:text-gray-400">Profile</a>
+                <a href="#" class="text-white hover:text-gray-400">Help</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Image -->
+    <section class="h-screen flex items-center justify-center bg-hero" id="top">
+        <div class="bg-overlay w-full h-full flex items-center justify-center">
+            <div class="text-center">
+                <h1 class="text-7xl font-extrabold text-white animate__animated animate__fadeInDown">Welcome to Vitcoin</h1>
+                <p class="mt-4 text-2xl text-gray-200 animate__animated animate__fadeInUp">The decentralized marketplace for students</p>
+                <a href="#explore"
+                    class="mt-8 inline-block bg-green-400 text-white text-xl py-3 px-6 rounded-lg hover:bg-green-500 transition hover-glow">Get
+                    Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Vitcoin Section -->
+    <section class="container mx-auto py-16 text-center">
+        <h2 class="text-4xl font-bold mb-8 neon-text">About Vitcoin</h2>
+        <p class="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
+            Vitcoin is VIT's exclusive cryptocurrency built on the Solana blockchain, enabling students to participate in
+            a decentralized marketplace with fast, low-cost transactions.
+        </p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mx-auto py-16 text-center">
+        <h2 class="text-4xl font-bold mb-8 neon-text">Features of Vitcoin</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg hover-glow">
+                <img src="https://source.unsplash.com/100x100/?speed" alt="Fast Transactions" class="mb-4 mx-auto">
+                <h3 class="text-2xl font-semibold neon-text">Fast Transactions</h3>
+                <p class="text-gray-300 mt-2">Experience lightning-fast transactions on the Solana blockchain.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg hover-glow">
+                <img src="https://source.unsplash.com/100x100/?lowcost" alt="Low Fees" class="mb-4 mx-auto">
+                <h3 class="text-2xl font-semibold neon-text">Low Fees</h3>
+                <p class="text-gray-300 mt-2">Enjoy ultra-low transaction costs, making Vitcoin accessible for all.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg hover-glow">
+                <img src="https://source.unsplash.com/100x100/?security" alt="Secure" class="mb-4 mx-auto">
+                <h3 class="text-2xl font-semibold neon-text">Highly Secure</h3>
+                <p class="text-gray-300 mt-2">Built with the latest blockchain technology to ensure security and trust.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="container mx-auto py-16 text-center bg-gray-900">
+        <h2 class="text-4xl font-bold mb-8 neon-text">How It Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg hover-glow">
+                <h3 class="text-2xl font-semibold neon-text">1. Sign Up</h3>
+                <p class="text-gray-300 mt-2">Create your account in just a few steps and get started with Vitcoin.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg hover-glow">
+                <h3 class="text-2xl font-semibold neon-text">2. Get Vitcoins</h3>
+                <p class="text-gray-300 mt-2">Purchase Vitcoins or earn them by participating in campus activities.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg hover-glow">
+                <h3 class="text-2xl font-semibold neon-text">3. Use in Apps</h3>
+                <p class="text-gray-300 mt-2">Explore various apps like rentals, assignments, and gaming, and use your
+                    Vitcoins.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="container mx-auto py-16 text-center">
+        <h2 class="text-4xl font-bold mb-8 neon-text">Vitcoin Roadmap</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold neon-text">Q1 2024</h3>
+                <p class="text-gray-300 mt-2">Launch Vitcoin and start the rental app pilot program.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold neon-text">Q2 2024</h3>
+                <p class="text-gray-300 mt-2">Expand Vitcoin usage to academic services like the Assignment Helper app.
+                </p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold neon-text">Q3 2024</h3>
+                <p class="text-gray-300 mt-2">Introduce gaming competitions and campus-wide events with Vitcoin staking.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Apps Section -->
+    <section class="container mx-auto py-16 text-center" id="explore">
+        <h2 class="text-4xl font-bold mb-8 neon-text">Explore Apps</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+                class="bg-gray-800 p-6 rounded-lg hover-glow transform transition-transform hover:scale-105 hover:shadow-2xl">
+                <img src="https://source.unsplash.com/300x200/?rental" alt="Rental App" class="mb-4 rounded-lg">
+                <h3 class="text-2xl font-semibold neon-text">Rental App</h3>
+                <p class="text-gray-300 mt-2">Rent books, electronics, and more using Vitcoin.</p>
+                <a href="rental.html" class="block mt-4 text-green-400 hover:underline">View App</a>
+            </div>
+            <div
+                class="bg-gray-800 p-6 rounded-lg hover-glow transform transition-transform hover:scale-105 hover:shadow-2xl">
+                <img src="https://source.unsplash.com/300x200/?assignment" alt="Assignment Helper" class="mb-4 rounded-lg">
+                <h3 class="text-2xl font-semibold neon-text">Assignment Helper</h3>
+                <p class="text-gray-300 mt-2">Get help with your assignments and pay with Vitcoin.</p>
+                <a href="assignment-helper.html" class="block mt-4 text-green-400 hover:underline">View App</a>
+            </div>
+            <div
+                class="bg-gray-800 p-6 rounded-lg hover-glow transform transition-transform hover:scale-105 hover:shadow-2xl">
+                <img src="https://source.unsplash.com/300x200/?gaming" alt="Gaming Competitions" class="mb-4 rounded-lg">
+                <h3 class="text-2xl font-semibold neon-text">Gaming Competitions</h3>
+                <p class="text-gray-300 mt-2">Join gaming competitions and stake Vitcoin to win big!</p>
+                <a href="gaming.html" class="block mt-4 text-green-400 hover:underline">View App</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">&copy; 2024 Vitcoin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Navbar Toggle Script -->
+    <script>
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const navbarMenu = document.querySelector('.navbar-menu');
+
+        navbarToggle.addEventListener('click', () => {
+            navbarMenu.classList.toggle('open');
+        });
+    </script>
+
+</body>
+
+</html>
