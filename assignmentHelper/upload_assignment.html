@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Assignment</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Assignment Helper</h1>
+            <a href="index.html" class="text-white bg-red-600 px-4 py-2 rounded">Go Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Upload Assignment Section -->
+    <section class="py-16 bg-gray-700">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Upload Your Assignment</h2>
+            <form id="uploadForm" class="bg-gray-800 p-8 rounded-lg max-w-lg mx-auto" enctype="multipart/form-data">
+                <!-- Assignment Title -->
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-bold mb-2">Assignment Title</label>
+                    <input type="text" id="assignmentTitle" class="shadow appearance-none rounded w-full py-2 px-3 bg-gray-700 text-white" placeholder="Enter your assignment title">
+                </div>
+
+                <!-- Assignment Text -->
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-bold mb-2">Assignment Text</label>
+                    <textarea id="assignmentText" class="shadow appearance-none rounded w-full py-2 px-3 bg-gray-700 text-white" placeholder="Describe your assignment"></textarea>
+                </div>
+
+                <!-- Upload Image (Diagram) -->
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-bold mb-2">Upload Diagram (Optional)</label>
+                    <input type="file" id="assignmentImage" class="w-full text-gray-500 bg-gray-700 py-2 px-3 rounded" accept="image/*">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="button" onclick="uploadAssignment()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit Assignment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Script for handling form submission -->
+    <script>
+        function uploadAssignment() {
+            const title = document.getElementById('assignmentTitle').value;
+            const text = document.getElementById('assignmentText').value;
+            const image = document.getElementById('assignmentImage').files[0];
+
+            if (!title || !text) {
+                alert('Please provide the assignment title and text.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('text', text);
+            if (image) {
+                formData.append('image', image);
+            }
+
+            // Mock submitting form data (can be sent to a server using fetch or AJAX)
+            console.log('Assignment Data:', formData);
+
+            alert('Assignment Uploaded Successfully!');
+            // Redirect back to landing page
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>

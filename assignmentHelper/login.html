@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment Helper - Login/Signup</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <div class="h-screen flex items-center justify-center">
+    <div class="w-full max-w-sm">
+      <!-- Login Form -->
+      <div id="loginForm" class="bg-gray-800 shadow-md rounded-lg px-8 pt-6 pb-8">
+        <h2 class="text-4xl text-center font-bold mb-6">Login</h2>
+        <form>
+          <div class="mb-4">
+            <label class="block text-gray-300 text-sm font-bold mb-2">Email</label>
+            <input class="shadow appearance-none rounded w-full py-2 px-3 bg-gray-700 text-white" type="email" placeholder="Email" id="loginEmail">
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-300 text-sm font-bold mb-2">Password</label>
+            <input class="shadow appearance-none rounded w-full py-2 px-3 bg-gray-700 text-white" type="password" placeholder="Password" id="loginPassword">
+          </div>
+          <div class="flex items-center justify-between">
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none" type="button" onclick="redirectToLandingPage()">
+              Login
+            </button>
+            <a class="text-sm text-blue-500 hover:text-blue-700 cursor-pointer" onclick="toggleForms()">Sign Up</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Signup Form (Initially Hidden) -->
+      <div id="signupForm" class="bg-gray-800 shadow-md rounded-lg px-8 pt-6 pb-8 hidden">
+        <h2 class="text-4xl text-center font-bold mb-6">Sign Up</h2>
+        <form>
+          <div class="mb-4">
+            <label class="block text-gray-300 text-sm font-bold mb-2">Email</label>
+            <input class="shadow appearance-none rounded w-full py-2 px-3 bg-gray-700 text-white" type="email" placeholder="Email" id="signupEmail">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-300 text-sm font-bold mb-2">Username</label>
+            <input class="shadow appearance-none rounded w-full py-2 px-3 bg-gray-700 text-white" type="text" placeholder="Username" id="signupUsername">
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-300 text-sm font-bold mb-2">Password</label>
+            <input class="shadow appearance-none rounded w-full py-2 px-3 bg-gray-700 text-white" type="password" placeholder="Password" id="signupPassword">
+          </div>
+          <div class="flex items-center justify-between">
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none" type="button" onclick="redirectToLogin()">
+              Sign Up
+            </button>
+            <a class="text-sm text-blue-500 hover:text-blue-700 cursor-pointer" onclick="toggleForms()">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to toggle between Login and Signup forms
+    function toggleForms() {
+      var loginForm = document.getElementById("loginForm");
+      var signupForm = document.getElementById("signupForm");
+
+      if (loginForm.classList.contains("hidden")) {
+        loginForm.classList.remove("hidden");
+        signupForm.classList.add("hidden");
+      } else {
+        loginForm.classList.add("hidden");
+        signupForm.classList.remove("hidden");
+      }
+    }
+
+    // Function to handle login after successful login
+    function redirectToLandingPage() {
+      var email = document.getElementById("loginEmail").value;
+      var password = document.getElementById("loginPassword").value;
+
+      // Normally, you'd validate email and password here
+      // For demonstration, we just redirect to the landing page
+      if (email && password) {
+        window.location.href = 'index.html'; // Replace with actual landing page
+      } else {
+        alert("Please fill in both fields");
+      }
+    }
+
+    // Function to handle signup process and then redirect to login
+    function redirectToLogin() {
+      var email = document.getElementById("signupEmail").value;
+      var username = document.getElementById("signupUsername").value;
+      var password = document.getElementById("signupPassword").value;
+
+      // Normally, you'd send this data to the backend and create an account
+      // For demonstration, we simulate the signup process
+      if (email && username && password) {
+        alert("Sign up successful! Redirecting to login...");
+        toggleForms();  // Switch back to login form after signup
+      } else {
+        alert("Please fill in all fields");
+      }
+    }
+  </script>
+</body>
+</html>
