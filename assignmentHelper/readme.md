@@ -1,4 +1,5 @@
-Assignment Helper App
+<h2>Assignment Helper App<h2>
+  
 Overview
 The Assignment Helper App is a decentralized platform designed for students to request and offer help with academic assignments. Built on the Solana blockchain, the app leverages Vitcoin (our cryptocurrency) as the medium for payments, enabling peer-to-peer transactions without intermediaries. Students can list assignments they need help with, find tutors or peers to assist them, and complete transactions securely using Vitcoin.
 
