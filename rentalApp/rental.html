@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitcoin - Rental App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a class="text-2xl font-bold" href="#">Vitcoin</a>
+      <div>
+        <a href="index.html" class="hover:text-gray-400">Home</a>
+        <a href="rental.html" class="ml-6 hover:text-gray-400">Rental App</a>
+        <a href="rental-list.html" class="ml-6 hover:text-gray-400">Add Product</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Rental Products Section -->
+  <section class="container mx-auto py-16">
+    <h2 class="text-3xl font-bold text-center mb-8">Rental App: Available Products for Rent</h2>
+    
+    <!-- Add Product Button -->
+    <div class="flex justify-center mb-10">
+      <a href="rental-list.html" class="bg-green-500 hover:bg-green-400 text-white font-semibold py-2 px-6 rounded">
+        Add Your Product
+      </a>
+    </div>
+
+    <!-- Product Listing Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Product Card 1 -->
+      <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+        <img src="https://source.unsplash.com/300x200/?laptop" alt="Product" class="mb-4 rounded-lg">
+        <h3 class="text-xl font-semibold">Laptop</h3>
+        <p class="mt-2 text-gray-300">High-performance laptop available for rent.</p>
+        <p class="mt-2 text-green-400 font-bold">10 Vitcoin/day</p>
+        <button class="mt-4 bg-green-500 hover:bg-green-400 text-white font-semibold py-2 px-4 rounded">Rent Now</button>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+        <img src="https://source.unsplash.com/300x200/?bicycle" alt="Product" class="mb-4 rounded-lg">
+        <h3 class="text-xl font-semibold">Bicycle</h3>
+        <p class="mt-2 text-gray-300">Mountain bicycle perfect for outdoor adventures.</p>
+        <p class="mt-2 text-green-400 font-bold">5 Vitcoin/day</p>
+        <button class="mt-4 bg-green-500 hover:bg-green-400 text-white font-semibold py-2 px-4 rounded">Rent Now</button>
+      </div>
+      <!-- Product Card 3 -->
+      <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+        <img src="https://source.unsplash.com/300x200/?camera" alt="Product" class="mb-4 rounded-lg">
+        <h3 class="text-xl font-semibold">Camera</h3>
+        <p class="mt-2 text-gray-300">Professional camera for high-quality photography.</p>
+        <p class="mt-2 text-green-400 font-bold">8 Vitcoin/day</p>
+        <button class="mt-4 bg-green-500 hover:bg-green-400 text-white font-semibold py-2 px-4 rounded">Rent Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; 2024 Vitcoin. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
