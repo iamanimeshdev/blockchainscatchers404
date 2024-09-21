@@ -1,5 +1,5 @@
 
-<h1>Vitcoin - Decentralized Student Marketplace</h1>
+<h1>Vitcoin - Decentralized CryptoCurrency</h1>
 <p>
     <strong>Vitcoin</strong> is a decentralized, student-led marketplace built on the Solana blockchain, exclusively for VIT students. It allows students to engage in various activities like renting, academic help, and gaming competitions using Vitcoin, VIT's cryptocurrency.
 </p>
