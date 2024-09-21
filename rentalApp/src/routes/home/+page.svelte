@@ -1,0 +1,1 @@
+search bar with all the things to we can rent Home page.

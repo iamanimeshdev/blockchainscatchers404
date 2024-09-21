@@ -9,6 +9,12 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Animate.css for Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- AOS (Animate on Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -17,9 +23,9 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Custom gradient text and glow effects */
+        /* Neon text and hover glow effects */
         .neon-text {
-            background: linear-gradient(135deg, #9945ff, #14f195);
+            background: linear-gradient(135deg, #00f260, #0575E6);
             -webkit-background-clip: text;
             color: transparent;
         }
@@ -29,7 +35,8 @@
         }
 
         .hover-glow:hover {
-            box-shadow: 0 0 15px rgba(20, 241, 149, 0.7);
+            box-shadow: 0 0 30px rgba(0, 242, 96, 0.7), 0 0 60px rgba(5, 117, 230, 0.5);
+            transform: translateY(-5px);
         }
 
         /* Background image styling */
@@ -38,11 +45,16 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            position: relative;
+            height: 100vh;
         }
 
         .bg-overlay {
             background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Navbar dropdown for mobile */
@@ -56,21 +68,22 @@
             }
         }
 
-        /* Hover effect for services (features) */
+        /* Hover effect for features */
         .services-container .services-box {
-            flex: 1 1 30rem;
-            background: var(--snd-bg-color);
-            padding: 3rem 2rem 4rem;
+            background: black;
+            padding: 3rem 2rem;
             margin: 2rem;
-            border-radius: 2rem;
+            border-radius: 1rem;
             text-align: center;
-            border: .2rem solid var(--bg-color);
+            border: .2rem solid #333;
             transition: .5s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .services-container .services-box:hover {
             border-color: var(--main-color);
-            transform: scale(1.02);
+            transform: scale(1.05);
         }
 
         .services-box img {
@@ -80,70 +93,94 @@
         }
 
         .services-box:hover img {
-            transform: scale(1.1);
+            transform: scale(1.2);
         }
 
-        /* Roadmap Layout */
-.roadmap-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
+        /* Roadmap Styling */
+        .roadmap-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
 
-.roadmap-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #1a1a1a;
-    padding: 2rem;
-    border-radius: 1rem;
-    width: 15rem;
-    transition: 0.3s;
-}
+        .roadmap-item {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 15rem;
+            transition: 0.3s;
+        }
 
-.roadmap-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(20, 241, 149, 0.7);
-}
+        .roadmap-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 242, 96, 0.7);
+        }
 
-.circle {
-    background-color: #14f195;
-    color: #1a1a1a;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
+        .circle {
+            background-color: #00f260;
+            color: #1a1a1a;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-.content h3 {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    color: #fff;
-}
+        .arrow {
+            font-size: 3rem;
+            color: #00f260;
+            transform: rotate(90deg);
+        }
 
-.content p {
-    margin-top: 0.5rem;
-    color: #d1d1d1;
-}
+        @media (min-width: 768px) {
+            .arrow {
+                transform: rotate(0deg);
+            }
+        }
 
-.arrow {
-    font-size: 3rem;
-    color: #14f195;
-    transform: rotate(90deg);
-}
+        /* Video Styling */
+        .video-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
 
-@media (min-width: 768px) {
-    .arrow {
-        transform: rotate(0deg);
-    }
-}
+        .video-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
 
+        /* Enhanced color contrast for accessibility */
+        .text-high-contrast {
+            color: #ffffff;
+            background-color: #111827;
+        }
+
+        .bg-high-contrast {
+            background-color: #1f2937;
+        }
+
+        .text-bright {
+            color: #00f260;
+        }
+
+        .btn-cta {
+            background-color: #0575E6;
+            color: #ffffff;
+        }
+
+        .btn-cta:hover {
+            background-color: #00f260;
+        }
     </style>
 </head>
 
@@ -152,17 +189,21 @@
     <!-- Navbar -->
     <nav class="bg-gray-900 py-4 px-6 fixed w-full top-0 z-50 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <a class="text-3xl font-bold neon-text" href="#">Vitcoin</a>
+            <!-- Logo Section -->
+            <a class="text-3xl font-bold neon-text" href="#">
+                <img src="snapedit_1726840951824-removebg-preview__1___1___1_-removebg-preview (2).png" alt="Vitcoin Logo" class="h-16">
+            </a>
             <button class="md:hidden text-white" id="navbar-toggle">☰</button>
             <div class="hidden md:flex navbar-menu space-x-8">
-                <a href="#" class="text-white hover:text-gray-400">Home</a>
-                <a href="#" class="text-white hover:text-gray-400">Profile</a>
-                <a href="#" class="text-white hover:text-gray-400">Help</a>
+                <a href="#top" class="text-white hover:text-gray-400">Home</a>
+                <a href="#about" class="text-white hover:text-gray-400">About</a>
+                <a href="#explore" class="text-white hover:text-gray-400">Apps</a>
+                <a href="#how-it-works" class="text-white hover:text-gray-400">How it Works</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Background Image -->
+    <!-- Hero Section with Background Image and Video -->
     <section class="h-screen flex items-center justify-center bg-hero" id="top">
         <div class="bg-overlay w-full h-full flex items-center justify-center">
             <div class="text-center">
@@ -175,70 +216,81 @@
         </div>
     </section>
 
+    <!-- <div class="video-responsive mt-8 animate__animated animate__fadeInUp">
+        <iframe src="https://www.youtube.com/embed/BqFSHbzSs7U" title="Vitcoin Introduction" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div> -->
+
     <!-- About Vitcoin Section -->
-    <section class="container mx-auto py-16 text-center">
+    <section id="about" class="container mx-auto py-16 text-center bg-high-contrast text-high-contrast" data-aos="fade-up">
         <h2 class="text-4xl font-bold mb-8 neon-text">About Vitcoin</h2>
-        <p class="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
+        <p class="text-lg leading-relaxed max-w-2xl mx-auto">
             Vitcoin is VIT's exclusive cryptocurrency built on the Solana blockchain, enabling students to participate in
             a decentralized marketplace with fast, low-cost transactions.
         </p>
     </section>
 
-    <!-- Features Section with Hover Effects -->
-    <section class="container mx-auto py-16 text-center">
-        <h2 class="text-4xl font-bold mb-8 neon-text">Features of Vitcoin</h2>
-        <div class="services-container grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="services-box hover-glow">
-                <img src="https://source.unsplash.com/100x100/?speed" alt="Fast Transactions" class="mb-4 mx-auto">
-                <h3 class="text-2xl font-semibold neon-text">Fast Transactions</h3>
-                <p class="text-gray-300 mt-2">Experience lightning-fast transactions on the Solana blockchain.</p>
+    <!-- How It Works Section (Centered) -->
+    <section id="how-it-works" class="container mx-auto py-16 text-center bg-high-contrast text-high-contrast" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-8 neon-text">How Vitcoin Works</h2>
+        <p class="text-lg max-w-2xl mx-auto leading-relaxed mb-12">
+            Vitcoin leverages the speed, security, and scalability of the Solana blockchain to offer a seamless transaction
+            experience for users. Here’s a step-by-step breakdown of how it works:
+        </p>
+
+        <div class="roadmap-container">
+            <div class="roadmap-item">
+                <div class="circle">1</div>
+                <h3 class="text-xl font-bold mt-4">Sign Up</h3>
+                <p class="text-gray-300">Register on the Vitcoin platform with your student credentials.</p>
             </div>
-            <div class="services-box hover-glow">
-                <img src="https://source.unsplash.com/100x100/?lowcost" alt="Low Fees" class="mb-4 mx-auto">
-                <h3 class="text-2xl font-semibold neon-text">Low Fees</h3>
-                <p class="text-gray-300 mt-2">Enjoy ultra-low transaction costs, making Vitcoin accessible for all.</p>
+            <div class="arrow">→</div>
+            <div class="roadmap-item">
+                <div class="circle">2</div>
+                <h3 class="text-xl font-bold mt-4">Receive Coins</h3>
+                <p class="text-gray-300">Get Vitcoins to spend or trade within the VIT marketplace.</p>
             </div>
-            <div class="services-box hover-glow">
-                <img src="https://source.unsplash.com/100x100/?security" alt="Secure" class="mb-4 mx-auto">
-                <h3 class="text-2xl font-semibold neon-text">Highly Secure</h3>
-                <p class="text-gray-300 mt-2">Built with the latest blockchain technology to ensure security and trust.</p>
+            <div class="arrow">→</div>
+            <div class="roadmap-item">
+                <div class="circle">3</div>
+                <h3 class="text-xl font-bold mt-4">Use Vitcoins</h3>
+                <p class="text-gray-300">Spend Vitcoins for services, products, or trade with fellow students.</p>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section - Roadmap Style -->
-<section class="container mx-auto py-16 text-center bg-gray-900">
-    <h2 class="text-4xl font-bold mb-8 neon-text">How It Works</h2>
-    <div class="roadmap-container">
-        <div class="roadmap-item">
-            <div class="circle">1</div>
-            <div class="content">
-                <h3>Sign Up</h3>
-                <p>Create your account in just a few steps and get started with Vitcoin.</p>
-            </div>
+    <!-- Features Section with Hover Effects and Video -->
+    <section class="container mx-auto py-16 text-center bg-gray-900 text-high-contrast" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-8 neon-text">Features of Vitcoin</h2>
+        <div class="services-box">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/speed.png" alt="Fast Transactions" class="mb-4 mx-auto">
+            <h3 class="text-2xl font-semibold neon-text">Fast Transactions</h3>
+            <p class="text-gray-300 mt-2">Experience lightning-fast transactions on the Solana network.</p>
         </div>
-        <div class="arrow">➜</div>
-        <div class="roadmap-item">
-            <div class="circle">2</div>
-            <div class="content">
-                <h3>Get Vitcoins</h3>
-                <p>Purchase Vitcoins or earn them by participating in campus activities.</p>
-            </div>
+        <br></br>
+        <div class="services-box">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/secured-letter--v1.png" alt="Secure Payments" class="mb-4 mx-auto">
+            <h3 class="text-2xl font-semibold neon-text">Secure Payments</h3>
+            <p class="text-gray-300 mt-2">Vitcoin offers decentralized, secure payments powered by blockchain.</p>
         </div>
-        <div class="arrow">➜</div>
-        <div class="roadmap-item">
-            <div class="circle">3</div>
-            <div class="content">
-                <h3>Use in Apps</h3>
-                <p>Explore various apps like rentals, assignments, and gaming, and use your Vitcoins.</p>
-            </div>
+        <br></br>
+        
+        <div class="services-box">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/globe.png" alt="Global Usability" class="mb-4 mx-auto">
+            <h3 class="text-2xl font-semibold neon-text">Global Usability</h3>
+            <p class="text-gray-300 mt-2">Vitcoin is usable both on-campus and across the globe in the future.</p>
         </div>
-    </div>
-</section>
+        
+        
+        </div>
 
+        <!-- Features Video -->
+        <!-- <div class="video-responsive mt-8 animate__animated animate__fadeInUp">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Vitcoin Features" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div> -->
+    </section>
 
- <!-- Explore Apps Section -->
-<section class="container mx-auto py-16 text-center" id="explore">
+    <!-- Explore Apps Section -->
+<section class="container mx-auto py-16 text-center" data-aos="fade-up" id="explore">
     <h2 class="text-4xl font-bold mb-8 neon-text">Explore Apps Powered by Vitcoin</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-gray-800 p-10 rounded-lg hover-glow">
@@ -266,13 +318,15 @@
 </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-8">
-        <div class="container mx-auto text-center text-gray-400">
-            <p>&copy; 2024 Vitcoin. All Rights Reserved.</p>
-        </div>
+    <footer class="bg-gray-900 py-8 text-center text-gray-400">
+        <p>&copy; 2024 Vitcoin. All Rights Reserved.</p>
     </footer>
 
+    <!-- AOS.js (Animate on Scroll) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        AOS.init();
+
         const navbarToggle = document.getElementById("navbar-toggle");
         const navbarMenu = document.querySelector(".navbar-menu");
 
