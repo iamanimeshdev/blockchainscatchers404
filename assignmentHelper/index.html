@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment Helper</title>
-    <!-- Tailwind CSS CDN -->
+   
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-900 text-white">
-    <!-- Navbar -->
+    
     <nav class="bg-gray-800 p-4">
         <div class="container mx-auto flex justify-between items-center">
             <div>
@@ -24,7 +24,6 @@
         </div>
     </nav>
 
-    <!-- Welcome Section -->
     <section class="bg-gray-800 py-16">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-4">Welcome to Assignment Helper</h2>
@@ -32,7 +31,6 @@
         </div>
     </section>
 
-    <!-- Upload Question Section -->
     <section class="py-16 bg-gray-700">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4">Upload Your Assignment Questions</h2>
@@ -45,7 +43,7 @@
                     <label class="block text-gray-300 text-sm font-bold mb-2">Assignment Description</label>
                     <textarea id="assignmentDescription" class="shadow appearance-none rounded w-full py-2 px-3 bg-gray-700 text-white" placeholder="Describe your assignment"></textarea>
                 </div>
-                <!-- Upload Image (Optional) -->
+       
                 <div class="mb-4">
                     <label class="block text-gray-300 text-sm font-bold mb-2">Upload Image (Optional)</label>
                     <input type="file" id="assignmentImage" class="w-full text-gray-500 bg-gray-700 py-2 px-3 rounded" accept="image/*">
@@ -55,49 +53,44 @@
         </div>
     </section>
 
-    <!-- View Uploaded Assignments Section -->
     <section class="py-16 bg-gray-900">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4">All Uploaded Assignments</h2>
             <div id="assignmentList" class="bg-gray-800 p-8 rounded-lg max-w-3xl mx-auto">
-                <!-- Uploaded assignments will be listed here -->
+          
             </div>
         </div>
     </section>
 
-    <!-- Script for handling the logic -->
     <script>
         let assignments = [];
 
-        // Function to upload question
         function uploadQuestion() {
             const title = document.getElementById('assignmentTitle').value;
             const description = document.getElementById('assignmentDescription').value;
             const image = document.getElementById('assignmentImage').files[0];
 
             if (title && description) {
-                // Add the assignment to the array
+        
                 const newAssignment = {
                     title: title,
                     description: description,
-                    image: image ? URL.createObjectURL(image) : null, // Create a URL for the uploaded image
-                    id: assignments.length + 1 // Assign an id for each assignment
+                    image: image ? URL.createObjectURL(image) : null, 
+                    id: assignments.length + 1 
                 };
                 assignments.push(newAssignment);
 
-                // Reset the form
+           
                 document.getElementById('assignmentTitle').value = '';
                 document.getElementById('assignmentDescription').value = '';
                 document.getElementById('assignmentImage').value = '';
 
-                // Update the assignment list display
                 displayAssignments();
             } else {
                 alert('Please fill in both fields');
             }
         }
 
-        // Function to display uploaded assignments
         function displayAssignments() {
             const assignmentListDiv = document.getElementById('assignmentList');
             assignmentListDiv.innerHTML = '';
@@ -116,12 +109,10 @@
             });
         }
 
-        // Function to redirect to the upload answer page
         function redirectToUploadAnswer(assignmentId) {
             window.location.href = `upload_answer.html?assignmentId=${assignmentId}`;
         }
 
-        // On page load, display any assignments that might have been previously uploaded
         window.onload = function () {
             displayAssignments();
         }

@@ -6,16 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitcoin - Landing Page</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Animate.css for Animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <!-- AOS (Animate on Scroll) CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -37,7 +33,7 @@
             background-repeat: no-repeat;
             height: 100vh;
         }
-        /* Neon text and hover glow effects */
+        
         .neon-text {
             background: linear-gradient(135deg, #00f260, #0575E6);
             -webkit-background-clip: text;
@@ -53,7 +49,6 @@
             transform: translateY(-5px);
         }
 
-        /* Background image styling */
         .bg-hero {
             background-image: url('bg2.jpg');
             background-size: cover;
@@ -66,12 +61,10 @@
             background-color: rgba(0, 0, 0, 0.7);
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Navbar dropdown for mobile */
         @media (max-width: 768px) {
             .navbar-menu {
                 display: none;
@@ -82,9 +75,8 @@
             }
         }
 
-        /* Hover effect for features */
         .services-container .services-box {
-            /* background: black; */
+           
             padding: 3rem 2rem;
             margin: 2rem;
             border-radius: 1rem;
@@ -110,7 +102,6 @@
             transform: scale(1.2);
         }
 
-        /* Roadmap Styling */
         .roadmap-container {
             display: flex;
             align-items: center;
@@ -134,7 +125,7 @@
 
         .circle {
             background-color: #00f260;
-            /* color: #1a1a1a; */
+            
             width: 3rem;
             height: 3rem;
             border-radius: 50%;
@@ -157,7 +148,6 @@
             }
         }
 
-        /* Video Styling */
         .video-responsive {
             overflow: hidden;
             padding-bottom: 56.25%;
@@ -173,15 +163,11 @@
             position: absolute;
         }
 
-        /* Enhanced color contrast for accessibility */
         .text-high-contrast {
             color: #ffffff;
-            /* background-color: #111827; */
+          
         }
 
-        /* .bg-high-contrast {
-            background-color: #1f2937;
-        } */
 
         .text-bright {
             color: #00f260;
@@ -200,10 +186,9 @@
 
 <body class="bg-gray-900 text-gray-100">
 
-    <!-- Navbar -->
     <nav class=" py-0.1 px-6 fixed w-full top-0 z-50 shadow-xl">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo Section -->
+         
             <a class="text-3xl font-bold neon-text" href="#">
                 <img src="snapedit_1726840951824-removebg-preview__1___1___1_-removebg-preview (2).png" alt="Vitcoin Logo" class="h-16">
             </a>
@@ -217,7 +202,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Background Image and Video -->
     <section class="h-screen flex items-center justify-center bg-hero" id="top">
         <div class="bg-overlay w-full h-full flex items-center justify-center">
             <div class="text-center">
@@ -230,11 +214,6 @@
         </div>
     </section>
 
-    <!-- <div class="video-responsive mt-8 animate__animated animate__fadeInUp">
-        <iframe src="https://www.youtube.com/embed/BqFSHbzSs7U" title="Vitcoin Introduction" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div> -->
-
-    <!-- About Vitcoin Section -->
     <section id="about" class="container mx-auto py-16 text-center bg-high-contrast text-high-contrast" data-aos="fade-up">
         <h2 class="text-4xl font-bold mb-8 neon-text">About Vitcoin</h2>
         <p class="text-lg leading-relaxed max-w-2xl mx-auto">
@@ -243,7 +222,6 @@
         </p>
     </section>
 
-    <!-- How It Works Section (Centered) -->
     <section id="how-it-works" class="container mx-auto py-16 text-center bg-high-contrast text-high-contrast" data-aos="fade-up">
         <h2 class="text-4xl font-bold mb-8 neon-text">How Vitcoin Works</h2>
         <p class="text-lg max-w-2xl mx-auto leading-relaxed mb-12">
@@ -272,7 +250,6 @@
         </div>
     </section>
 
-<!-- Features Section with Hover Effects and Video -->
 <section class="container mx-auto py-16 text-center text-high-contrast" data-aos="fade-up">
     <h2 class="text-4xl font-bold mb-8 neon-text">Features of Vitcoin</h2>
     <div class="services-box">
@@ -296,16 +273,12 @@
 </section>
 
 
-        <!-- Features Video -->
-        <!-- <div class="video-responsive mt-8 animate__animated animate__fadeInUp">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Vitcoin Features" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div> -->
+       
     </section>
 
-   <!-- Explore Apps Section -->
 <section class="container mx-auto py-16 text-center" data-aos="fade-up" id="explore">
     <h2 class="text-4xl font-bold mb-8 neon-text">Explore Apps Powered by Vitcoin</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-4"> <!-- Added mx-4 for margin on sides -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-4"> 
         <div class="bg-gray-800 p-10 rounded-lg hover-glow">
             <h3 class="text-2xl font-semibold neon-text">Rental Site</h3>
             <p class="text-gray-300 mt-4 mb-6">Rent or lend items on campus with Vitcoin's secure system.</p>
@@ -330,12 +303,10 @@
     </div>
 </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 py-8 text-center text-gray-400">
         <p>&copy; 2024 Vitcoin. All Rights Reserved.</p>
     </footer>
 
-    <!-- AOS.js (Animate on Scroll) -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
